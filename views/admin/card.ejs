@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="comment-widgets scrollable">
+        <!-- Comment Row -->
+        <% for(let i=0;i<cords.length;i++) {%>
+        <div class="d-flex flex-row comment-row m-t-0">
+
+            <div class="comment-text w-100">
+                <h6 class="font-medium "><%= cords[i].name %></h6>
+                <i style="padding:1%;" class='fas fa-briefcase'></i>
+                <span class="text-muted"><%= cords[i].job %></span> <br>
+                <span class="m-b-15 d-block"> <em><%= cords[i].note %> </em></span>
+                <div class="container">
+                    <div class="row">
+                      <div class="col-sm">
+                        <i class='far fa-address-book'></i>
+                         <span class="text-muted"  style="padding-left:10px">     <%= cords[i].address %></span> <br>
+                         <i class='far fa-envelope-open'></i>
+                         <span class="text-muted"  style="padding-left:10px">  <%= cords[i].mail %></span> <br>
+                      </div>
+                      <div class="col-sm">
+                        <i class='fas fa-phone-volume'></i>  
+                        <span class="text-muted"  style="padding-left:20px"><%= cords[i].mobil %></span> <br>
+                        <i class='fas fa-phone-volume'></i>
+                         <span class="text-muted" style="padding-left:20px"><%= cords[i].fix %></span> <br>
+                    
+                      </div>
+                      <div class="col-sm">
+                       <b> ЈМБГ: </b>
+                        <span class="text-muted"  style="padding-left:30px"><%= cords[i].number %></span> <br>
+                       <b> БРЛК:</b> 
+                        <span class="text-muted"  style="padding-left:30px"><%= cords[i].person %></span> <br>
+                        <b> ЧЛАН ОД:</b> 
+                        <span class="text-muted"  style="padding-left:3px"><%= cords[i].date %></span> <br>
+                     
+              
+                      </div>
+                    </div>
+                  </div-->
+                           <div class="comment-footer" style="margin-top: 10px;">
+                    
+                    <button type="button" style="background-color: rgb(252, 204, 204);" class="btn  btn-sm">Измени</button>
+                    <button type="button" style="background-color: rgb(243, 77, 77);" class="btn  btn-sm">
+                        <%= cords[i].role %>
+                    </button>
+                    <button type="button" style="background-color: rgb(170, 4, 4);" class="btn  btn-sm delete-cord"
+                    data-id="<%= cords[i]._id %>">
+                        Обриши</button>
+                </div>
+            </div>
+        </div><hr>
+        <% } %>
+
+    </div>
+</div>
+</body>
+</html>

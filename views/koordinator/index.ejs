@@ -1,0 +1,692 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- Tell the browser to be responsive to screen width -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <!-- Favicon icon -->
+    <link rel="icon" type="image/png" sizes="16x16" href="../../assets/images/favicon.png">
+    <script src="https://kit.fontawesome.com/yourcode.js" crossorigin="anonymous"></script>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Maven+Pro&display=swap" rel="stylesheet">
+    <title><%= name %></title>
+    <!-- Custom CSS -->
+    <link href="../../assets/libs/flot/css/float-chart.css" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link href="../../dist/css/style.min.css" rel="stylesheet">
+    <link href="../../css/main.css" rel="stylesheet">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+<![endif]-->
+</head>
+
+<body  style="background-color:#A2242F; font-family: 'Maven Pro', sans-serif;">
+    <!-- ============================================================== -->
+    <!-- Preloader - style you can find in spinners.css -->
+    <!-- ============================================================== -->
+    <div class="preloader" style="background-color:#A2242F; font-family: 'Maven Pro', sans-serif;">
+        <div class="lds-ripple" style="background-color:#A2242F; font-family: 'Maven Pro', sans-serif;">
+            <div class="lds-pos"></div>
+            <div class="lds-pos"></div>
+        </div>
+    </div>
+    <!-- ============================================================== -->
+    <!-- Main wrapper - style you can find in pages.scss -->
+    <!-- ============================================================== -->
+    <div id="main-wrapper" >
+        <!-- ============================================================== -->
+        <!-- Topbar header - style you can find in pages.scss -->
+        <!-- ============================================================== -->
+        <header class="topbar" data-navbarbg="skin5" style="background-color:#A2242F; font-family: 'Maven Pro', sans-serif; ">
+            <nav class="navbar top-navbar navbar-expand-md "  style="background-color:#A2242F; font-family: 'Maven Pro', sans-serif;">
+                <div class="navbar-header" data-logobg="skin5" style="background-color:#A2242F; font-family: 'Maven Pro', sans-serif;">
+                    <!-- This is for the sidebar toggle which is visible on mobile only -->
+                    <a class="nav-toggler waves-effect waves-light d-block d-md-none" 
+                    href="javascript:void(0)"><i class="ti-menu ti-close"></i></a>
+                    <!-- ============================================================== -->
+                    <!-- Logo -->
+                    <!-- ============================================================== -->
+                    <a class="navbar-brand" style="background-color:#A2242F; font-family: 'Maven Pro', sans-serif;"  >
+                        <!-- Logo icon -->
+                        <b class="logo-icon p-l-10" style="background-color:#A2242F; font-family: 'Maven Pro', sans-serif;">
+                            <!--You can put here icon as well // <i class="wi wi-sunset"></i> //-->
+                            <!-- Dark Logo icon -->
+                            <img src="images/srce.jpg" style="background-color:#A2242F; font-family: 'Maven Pro', sans-serif; margin-top: 4px;"
+                             alt="homepage" width="100px" class="light-logo" />
+                           
+                        </b>
+                      
+                    </a>
+  
+                    <!-- Toggle which is visible on mobile only -->
+                    <!-- ============================================================== -->
+                    <a class="topbartoggler d-block d-md-none waves-effect waves-light" href="javascript:void(0)" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><i class="ti-more"></i></a>
+                </div>
+                <!-- ============================================================== -->
+                <!-- End Logo -->
+                <!-- ============================================================== -->
+                <div class="navbar-collapse collapse" id="navbarSupportedContent" data-navbarbg="skin5"
+                style="background-color:white; font-family: 'Maven Pro', sans-serif;">
+                    <!-- ============================================================== -->
+                    <!-- toggle and nav items -->
+                    <!-- ============================================================== -->
+                    <ul class="navbar-nav float-left mr-auto"
+                    style="background-color:lightgrey; font-family: 'Maven Pro', sans-serif;">
+                        <li class="nav-item d-none d-md-block"><a class="nav-link sidebartoggler waves-effect waves-light" href="javascript:void(0)" data-sidebartype="mini-sidebar"><i class="mdi mdi-menu font-24"></i></a></li>
+         
+                        <!-- Search -->
+                        <!-- ============================================================== -->
+                        <li class="nav-item search-box"> <a class="nav-link waves-effect waves-dark" href="javascript:void(0)"><i class="ti-search"></i></a>
+                            <form class="app-search position-absolute">
+                                <input type="text" class="form-control" placeholder="Search &amp; enter"> <a class="srh-btn"><i class="ti-close"></i></a>
+                            </form>
+                        </li>
+                    </ul>
+                    <!-- ============================================================== -->
+                    <!-- Right side toggle and nav items -->
+                    <!-- ============================================================== -->
+                    <ul class="navbar-nav float-right" >
+                     
+                   <div class="row"> 
+                        <!-- Messages -->
+                        <!-- ============================================================== -->
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle waves-effect waves-dark" href="" id="2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> 
+                                <i class='fas fa-envelope-open' style='font-size:24px;color:#A2242F' ></i>
+                            </a>
+                          
+                            <div class="dropdown-menu dropdown-menu-right mailbox animated bounceInDown" aria-labelledby="2">
+                                <ul class="list-style-none">
+                                    <li>
+                                        <div class="">
+                                             <!-- Message -->
+                                            <a href="javascript:void(0)" class="link border-top">
+                                                <div class="d-flex no-block align-items-center p-10">
+                                                    <span class="btn btn-success btn-circle"><i class="ti-calendar"></i></span>
+                                                    <div class="m-l-10">
+                                                        <h5 class="m-b-0">Event today</h5> 
+                                                        <span class="mail-desc">Just a reminder that event</span> 
+                                                    </div>
+                                                </div>
+                                            </a>
+                                            <!-- Message -->
+                                            <a href="javascript:void(0)" class="link border-top">
+                                                <div class="d-flex no-block align-items-center p-10">
+                                                    <span class="btn btn-info btn-circle"><i class="ti-settings"></i></span>
+                                                    <div class="m-l-10">
+                                                        <h5 class="m-b-0">Settings</h5> 
+                                                        <span class="mail-desc">You can customize this template</span> 
+                                                    </div>
+                                                </div>
+                                            </a>
+                                            <!-- Message -->
+                                            <a href="javascript:void(0)" class="link border-top">
+                                                <div class="d-flex no-block align-items-center p-10">
+                                                    <span class="btn btn-primary btn-circle"><i class="ti-user"></i></span>
+                                                    <div class="m-l-10">
+                                                        <h5 class="m-b-0">Pavan kumar</h5> 
+                                                        <span class="mail-desc">Just see the my admin!</span> 
+                                                    </div>
+                                                </div>
+                                            </a>
+                                            <!-- Message -->
+                                            <a href="javascript:void(0)" class="link border-top">
+                                                <div class="d-flex no-block align-items-center p-10">
+                                                    <span class="btn btn-danger btn-circle"><i class="fa fa-link"></i></span>
+                                                    <div class="m-l-10">
+                                                        <h5 class="m-b-0">Luanch Admin</h5> 
+                                                        <span class="mail-desc">Just see the my new admin!</span> 
+                                                    </div>
+                                                </div>
+                                            </a>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </li>
+                        <!-- ============================================================== -->
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle waves-effect waves-dark" href="" id="2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> 
+                                <i class='far fa-comments' style='font-size:28px;color:#A2242F'></i>
+                            </a>
+                          
+                            <div class="dropdown-menu dropdown-menu-right mailbox animated bounceInDown" aria-labelledby="2">
+                                <ul class="list-style-none">
+                                    <li>
+                                        <div class="">
+                                             <!-- Message -->
+                                            <a href="javascript:void(0)" class="link border-top">
+                                                <div class="d-flex no-block align-items-center p-10">
+                                                    <span class="btn btn-success btn-circle"><i class="ti-calendar"></i></span>
+                                                    <div class="m-l-10">
+                                                        <h5 class="m-b-0">Event today</h5> 
+                                                        <span class="mail-desc">Just a reminder that event</span> 
+                                                    </div>
+                                                </div>
+                                            </a>
+                                            <!-- Message -->
+                                            <a href="javascript:void(0)" class="link border-top">
+                                                <div class="d-flex no-block align-items-center p-10">
+                                                    <span class="btn btn-info btn-circle"><i class="ti-settings"></i></span>
+                                                    <div class="m-l-10">
+                                                        <h5 class="m-b-0">Settings</h5> 
+                                                        <span class="mail-desc">You can customize this template</span> 
+                                                    </div>
+                                                </div>
+                                            </a>
+                                            <!-- Message -->
+                                            <a href="javascript:void(0)" class="link border-top">
+                                                <div class="d-flex no-block align-items-center p-10">
+                                                    <span class="btn btn-primary btn-circle"><i class="ti-user"></i></span>
+                                                    <div class="m-l-10">
+                                                        <h5 class="m-b-0">Pavan kumar</h5> 
+                                                        <span class="mail-desc">Just see the my admin!</span> 
+                                                    </div>
+                                                </div>
+                                            </a>
+                                            <!-- Message -->
+                                            <a href="javascript:void(0)" class="link border-top">
+                                                <div class="d-flex no-block align-items-center p-10">
+                                                    <span class="btn btn-danger btn-circle"><i class="fa fa-link"></i></span>
+                                                    <div class="m-l-10">
+                                                        <h5 class="m-b-0">Luanch Admin</h5> 
+                                                        <span class="mail-desc">Just see the my new admin!</span> 
+                                                    </div>
+                                                </div>
+                                            </a>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </li>
+                        <!-- End Messages -->
+                        <!-- ============================================================== -->
+
+                        <!-- ============================================================== -->
+                        <!-- User profile and search -->
+                        <!-- ============================================================== -->
+                    </ul>
+                </div>
+            </nav>
+        </header>
+        <!-- ============================================================== -->
+        <!-- End Topbar header -->
+        <!-- ============================================================== -->
+        <!-- ============================================================== -->
+        <!-- Left Sidebar - style you can find in sidebar.scss  -->
+        <!-- ============================================================== -->
+        <aside class="left-sidebar"  data-sidebarbg="skin5" style="background-color:#A2242F; font-family: 'Maven Pro', sans-serif;">
+            <!-- Sidebar scroll-->
+            <div class="scroll-sidebar" style="background-color:#A2242F; font-family: 'Maven Pro', sans-serif;">
+                <!-- Sidebar navigation-->
+                <nav class="sidebar-nav" style="background-color:#A2242F; font-family: 'Maven Pro', sans-serif;">
+                    <ul id="sidebarnav" class="p-t-30" >
+                        <li class="sidebar-item"> 
+                            <a class="sidebar-link" 
+                            style="background-color:#A2242F; font-family: 'Maven Pro', sans-serif;" href="/admin" aria-expanded="false">
+                            <i class="mdi mdi-view-dashboard active"></i><span class="hide-menu">Админ страна</span></a></li>
+                            
+                    </ul>
+                </nav>
+                <!-- End Sidebar navigation -->
+            </div>
+            <!-- End Sidebar scroll-->
+        </aside>
+     
+        <div class="page-wrapper">
+            <!-- ============================================================== -->
+                                <!-- accoridan part -->
+                                <div class="accordion"  id="accordionExample" style="margin-top: 3%;">
+                                    <h4 class="text-center p-3">СЕКЦИЈЕ</h4>
+                                    <div class="card m-b-0">
+                                        <div class="card-header" id="headingOne">
+                                          <h5 class="mb-0">
+                                            <a data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                              
+                                                <span  style="font-family: 'Maven Pro', sans-serif;">МУЗИЧКА СЕКЦИЈА <b>
+                                                    <% for(let i=0;i<musics.length;i++) {%>
+                                                        <h6  class="font-medium "><%= musics[i].name %></h6>
+                                                        <% } %>
+                                                </b></span>
+                                            </a>
+                                          </h5>
+                                        </div>
+                                        <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordionExample">
+                                          <div class="card-body">
+                                            <% for(let i=0;i<musicsMember.length;i++) {%>
+                                                <div class="d-flex flex-row comment-row m-t-0">
+
+                                                    <div class="comment-text w-100">
+                                                        <h6 class="font-medium "><%= i+1 %> <%= musicsMember[i].nameMember %></h6>
+                                                     
+                                                        <div class="container">
+                                                            <div class="row">
+                                                              <div class="col-sm">
+                                                                <i class='far fa-address-book'></i>
+                                                                 <span class="text-muted"  style="padding-left:10px">     <%= musicsMember[i].addressMember %></span> <br>
+                                                                 <i class='far fa-envelope-open'></i>
+                                                                 <span class="text-muted"  style="padding-left:10px">  <%= musicsMember[i].mailMember %></span> <br>
+                                                              </div>
+                                                              <div class="col-sm">
+                                                                <i class='fas fa-phone-volume'></i>  
+                                                                <span class="text-muted"  style="padding-left:20px"><%= musicsMember[i].mobilMember %></span> <br>
+                                                                <i class='fas fa-phone-volume'></i>
+                                                                 <span class="text-muted" style="padding-left:20px"><%= musicsMember[i].fixMember %></span> <br>
+                                                            
+                                                              </div>
+                                                              <div class="col-sm">
+                                                                <i class='far fa-clock'></i>
+                                                                <span class="text-muted"  style="padding-left:20px"><%= musicsMember[i].writeMember %></span> <br>
+                                                                <i class='fas fa-hand-holding-heart'></i>
+                                                                 <span class="text-muted" style="padding-left:20px"><%= musicsMember[i].stateMember %></span> <br>
+                                                            
+                                                              </div>
+                                                            
+                                                            </div>
+                                                          </div>
+                                                                   
+                                                            
+                                                         
+                                                    </div>
+                                                </div><hr>
+                                                <% } %>
+                                          </div>
+                                        </div>
+                                        <!--------------------------------------------------->
+                                    </div> 
+                                    <div class="card m-b-0 border-top">
+                                        <div class="card-header" id="headingTwo">
+                                          <h5 class="mb-0">
+                                            <a class="collapsed" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                                            
+                                                <span  style="font-family: 'Maven Pro', sans-serif;">СПОРТСКА СЕКЦИЈА
+                                                    <b>
+                                                        <% for(let i=0;i<sports.length;i++) {%>
+                                                            <h6 class="font-medium text-secondary"><%= sports[i].name %></h6>
+                                                            <% } %>
+                                                    </b>
+                                                </span>
+                                            </a>
+                                          </h5>
+                                        </div>
+                                        <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
+                                          <div class="card-body">
+                                            <% for(let i=0;i<sportsMember.length;i++) {%>
+                                                <div class="d-flex flex-row comment-row m-t-0">
+
+                                                    <div class="comment-text w-100">
+                                                        <h6 class="font-medium "><%= i+1 %> <%= sportsMember[i].nameMember %></h6>
+                                                     
+                                                        <div class="container">
+                                                            <div class="row">
+                                                              <div class="col-sm">
+                                                                <i class='far fa-address-book'></i>
+                                                                 <span class="text-muted"  style="padding-left:10px">     <%= sportsMember[i].addressMember %></span> <br>
+                                                                 <i class='far fa-envelope-open'></i>
+                                                                 <span class="text-muted"  style="padding-left:10px">  <%= sportsMember[i].mailMember %></span> <br>
+                                                              </div>
+                                                              <div class="col-sm">
+                                                                <i class='fas fa-phone-volume'></i>  
+                                                                <span class="text-muted"  style="padding-left:20px"><%= sportsMember[i].mobilMember %></span> <br>
+                                                                <i class='fas fa-phone-volume'></i>
+                                                                 <span class="text-muted" style="padding-left:20px"><%= sportsMember[i].fixMember %></span> <br>
+                                                            
+                                                              </div>
+                                                              <div class="col-sm">
+                                                                <i class='far fa-clock'></i>
+                                                                <span class="text-muted"  style="padding-left:20px"><%= sportsMember[i].writeMember %></span> <br>
+                                                                <i class='fas fa-hand-holding-heart'></i>
+                                                                 <span class="text-muted" style="padding-left:20px"><%= sportsMember[i].stateMember %></span> <br>
+                                                            
+                                                              </div>
+                                                            
+                                                            </div>
+                                                          </div>
+                                                                   
+                                                            
+                                                         
+                                                    </div>
+                                                </div><hr>
+                                                <% } %>
+                                          </div>
+                                        </div>
+                                    </div>
+                                    <div class="card m-b-0 border-top">
+                                        <div class="card-header" id="headingThree">
+                                          <h5 class="mb-0">
+                                            <a class="collapsed" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                                               
+                                                <span  style="font-family: 'Maven Pro', sans-serif;">ГРАЂЕВИНСКА СЕКЦИЈА</span>
+                                                <b>
+                                                    <% for(let i=0;i<builds.length;i++) {%>
+                                                        <h6 class="font-medium text-secondary"><%= builds[i].name %></h6>
+                                                        <% } %>
+                                                </b>
+                                            </a>
+                                          </h5>
+                                        </div>
+                                        <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordionExample">
+                                            <div class="card-body">
+                                                <% for(let i=0;i<buildsMember.length;i++) {%>
+                                                    <div class="d-flex flex-row comment-row m-t-0">
+    
+                                                        <div class="comment-text w-100">
+                                                            <h6 class="font-medium "><%= i+1 %> <%= buildsMember[i].nameMember %></h6>
+                                                         
+                                                            <div class="container">
+                                                                <div class="row">
+                                                                  <div class="col-sm">
+                                                                    <i class='far fa-address-book'></i>
+                                                                     <span class="text-muted"  style="padding-left:10px">     <%= buildsMember[i].addressMember %></span> <br>
+                                                                     <i class='far fa-envelope-open'></i>
+                                                                     <span class="text-muted"  style="padding-left:10px">  <%= buildsMember[i].mailMember %></span> <br>
+                                                                  </div>
+                                                                  <div class="col-sm">
+                                                                    <i class='fas fa-phone-volume'></i>  
+                                                                    <span class="text-muted"  style="padding-left:20px"><%= buildsMember[i].mobilMember %></span> <br>
+                                                                    <i class='fas fa-phone-volume'></i>
+                                                                     <span class="text-muted" style="padding-left:20px"><%= buildsMember[i].fixMember %></span> <br>
+                                                                
+                                                                  </div>
+                                                                  <div class="col-sm">
+                                                                    <i class='far fa-clock'></i>
+                                                                    <span class="text-muted"  style="padding-left:20px"><%= buildsMember[i].writeMember %></span> <br>
+                                                                    <i class='fas fa-hand-holding-heart'></i>
+                                                                     <span class="text-muted" style="padding-left:20px"><%= buildsMember[i].stateMember %></span> <br>
+                                                                
+                                                                  </div>
+                                                                
+                                                                </div>
+                                                              </div>
+                                                                       
+                                                                
+                                                             
+                                                        </div>
+                                                    </div><hr>
+                                                    <% } %>
+                                              </div>
+                                        </div>
+                                    </div>
+                                    <div class="card m-b-0 border-top" >
+                                        <div class="card-header" id="headingfour">
+                                          <h5 class="mb-0">
+                                            <a data-toggle="collapse" data-target="#collapsefour" aria-expanded="true" aria-controls="collapsefour">
+                                              
+                                                <span  style="font-family: 'Maven Pro', sans-serif;">ЈЕЗИЧКА СЕКЦИЈА <b>
+                                                    <% for(let i=0;i<languages.length;i++) {%>
+                                                        <h6  class="font-medium "><%= languages[i].name %></h6>
+                                                        <% } %>
+                                                </b></span>
+                                            </a>
+                                          </h5>
+                                        </div>
+                                        <div id="collapsefour" class="collapse" aria-labelledby="headingfour" data-parent="#accordionExample">
+                                          <div class="card-body">
+                                            <% for(let i=0;i<languagesMember.length;i++) {%>
+                                                <div class="d-flex flex-row comment-row m-t-0">
+
+                                                    <div class="comment-text w-100">
+                                                        <h6 class="font-medium "><%= i+1 %> <%= languagesMember[i].nameMember %></h6>
+                                                     
+                                                        <div class="container">
+                                                            <div class="row">
+                                                              <div class="col-sm">
+                                                                <i class='far fa-address-book'></i>
+                                                                 <span class="text-muted"  style="padding-left:10px">     <%= languagesMember[i].addressMember %></span> <br>
+                                                                 <i class='far fa-envelope-open'></i>
+                                                                 <span class="text-muted"  style="padding-left:10px">  <%= languagesMember[i].mailMember %></span> <br>
+                                                              </div>
+                                                              <div class="col-sm">
+                                                                <i class='fas fa-phone-volume'></i>  
+                                                                <span class="text-muted"  style="padding-left:20px"><%= languagesMember[i].mobilMember %></span> <br>
+                                                                <i class='fas fa-phone-volume'></i>
+                                                                 <span class="text-muted" style="padding-left:20px"><%= languagesMember[i].fixMember %></span> <br>
+                                                            
+                                                              </div>
+                                                              <div class="col-sm">
+                                                                <i class='far fa-clock'></i>
+                                                                <span class="text-muted"  style="padding-left:20px"><%= languagesMember[i].writeMember %></span> <br>
+                                                                <i class='fas fa-hand-holding-heart'></i>
+                                                                 <span class="text-muted" style="padding-left:20px"><%= languagesMember[i].stateMember %></span> <br>
+                                                            
+                                                              </div>
+                                                            
+                                                            </div>
+                                                          </div>
+                                                                   
+                                                            
+                                                         
+                                                    </div>
+                                                </div><hr>
+                                                <% } %>
+                                          </div>
+                                        </div>
+                                        <!--------------------------------------------------->
+                                    </div> 
+                                    <div class="card m-b-0 border-top">
+                                        <div class="card-header" id="headingthree">
+                                          <h5 class="mb-0">
+                                            <a class="collapsed" data-toggle="collapse" data-target="#collapsethree" aria-expanded="false" aria-controls="collapsethree">
+                                            
+                                                <span  style="font-family: 'Maven Pro', sans-serif;">ТУРИСТИЧКА СЕКЦИЈА
+                                                    <b>
+                                                        <% for(let i=0;i<turists.length;i++) {%>
+                                                            <h6 class="font-medium text-secondary"><%= turists[i].name %></h6>
+                                                            <% } %>
+                                                    </b>
+                                                </span>
+                                            </a>
+                                          </h5>
+                                        </div>
+                                        <div id="collapsethree" class="collapse" aria-labelledby="headingthree" data-parent="#accordionExample">
+                                          <div class="card-body">
+                                            <% for(let i=0;i<turistsMember.length;i++) {%>
+                                                <div class="d-flex flex-row comment-row m-t-0">
+
+                                                    <div class="comment-text w-100">
+                                                        <h6 class="font-medium "><%= i+1 %> <%= turistsMember[i].nameMember %></h6>
+                                                     
+                                                        <div class="container">
+                                                            <div class="row">
+                                                              <div class="col-sm">
+                                                                <i class='far fa-address-book'></i>
+                                                                 <span class="text-muted"  style="padding-left:10px">     <%= turistsMember[i].addressMember %></span> <br>
+                                                                 <i class='far fa-envelope-open'></i>
+                                                                 <span class="text-muted"  style="padding-left:10px">  <%= turistsMember[i].mailMember %></span> <br>
+                                                              </div>
+                                                              <div class="col-sm">
+                                                                <i class='fas fa-phone-volume'></i>  
+                                                                <span class="text-muted"  style="padding-left:20px"><%= turistsMember[i].mobilMember %></span> <br>
+                                                                <i class='fas fa-phone-volume'></i>
+                                                                 <span class="text-muted" style="padding-left:20px"><%= turistsMember[i].fixMember %></span> <br>
+                                                            
+                                                              </div>
+                                                              <div class="col-sm">
+                                                                <i class='far fa-clock'></i>
+                                                                <span class="text-muted"  style="padding-left:20px"><%= turistsMember[i].writeMember %></span> <br>
+                                                                <i class='fas fa-hand-holding-heart'></i>
+                                                                 <span class="text-muted" style="padding-left:20px"><%= turistsMember[i].stateMember %></span> <br>
+                                                            
+                                                              </div>
+                                                            
+                                                            </div>
+                                                          </div>
+                                                                   
+                                                            
+                                                         
+                                                    </div>
+                                                </div><hr>
+                                                <% } %>
+                                          </div>
+                                        </div>
+                                    </div>
+                                    <div class="card m-b-0 border-top">
+                                        <div class="card-header" id="headingfive">
+                                          <h5 class="mb-0">
+                                            <a class="collapsed" data-toggle="collapse" data-target="#collapsefive" aria-expanded="false" aria-controls="collapsefive">
+                                               
+                                                <span  style="font-family: 'Maven Pro', sans-serif;">МЕДИЦИНСКА СЕКЦИЈА</span>
+                                                <b>
+                                                    <% for(let i=0;i<medics.length;i++) {%>
+                                                        <h6 class="font-medium text-secondary"><%= medics[i].name %></h6>
+                                                        <% } %>
+                                                </b>
+                                            </a>
+                                          </h5>
+                                        </div>
+                                        <div id="collapsefive" class="collapse" aria-labelledby="headingfive" data-parent="#accordionExample">
+                                            <div class="card-body">
+                                                <% for(let i=0;i<medicsMember.length;i++) {%>
+                                                    <div class="d-flex flex-row comment-row m-t-0">
+    
+                                                        <div class="comment-text w-100">
+                                                            <h6 class="font-medium "><%= i+1 %> <%= medicsMember[i].nameMember %></h6>
+                                                         
+                                                            <div class="container">
+                                                                <div class="row">
+                                                                  <div class="col-sm">
+                                                                    <i class='far fa-address-book'></i>
+                                                                     <span class="text-muted"  style="padding-left:10px">     <%= medicsMember[i].addressMember %></span> <br>
+                                                                     <i class='far fa-envelope-open'></i>
+                                                                     <span class="text-muted"  style="padding-left:10px">  <%= medicsMember[i].mailMember %></span> <br>
+                                                                  </div>
+                                                                  <div class="col-sm">
+                                                                    <i class='fas fa-phone-volume'></i>  
+                                                                    <span class="text-muted"  style="padding-left:20px"><%= medicsMember[i].mobilMember %></span> <br>
+                                                                    <i class='fas fa-phone-volume'></i>
+                                                                     <span class="text-muted" style="padding-left:20px"><%= medicsMember[i].fixMember %></span> <br>
+                                                                
+                                                                  </div>
+                                                                  <div class="col-sm">
+                                                                    <i class='far fa-clock'></i>
+                                                                    <span class="text-muted"  style="padding-left:20px"><%= medicsMember[i].writeMember %></span> <br>
+                                                                    <i class='fas fa-hand-holding-heart'></i>
+                                                                     <span class="text-muted" style="padding-left:20px"><%= medicsMember[i].stateMember %></span> <br>
+                                                                
+                                                                  </div>
+                                                                
+                                                                </div>
+                                                              </div>
+                                                                       
+                                                                
+                                                             
+                                                        </div>
+                                                    </div><hr>
+                                                    <% } %>
+                                              </div>
+                                        </div>
+                                    </div>
+                                    <div class="card m-b-0 border-top">
+                                        <div class="card-header" id="headingsix">
+                                          <h5 class="mb-0">
+                                            <a class="collapsed" data-toggle="collapse" data-target="#collapsesix" aria-expanded="false" aria-controls="collapsesix">
+                                               
+                                                <span  style="font-family: 'Maven Pro', sans-serif;">ЕКОЛОШКА СЕКЦИЈА</span>
+                                                <b>
+                                                    <% for(let i=0;i<ekos.length;i++) {%>
+                                                        <h6 class="font-medium text-secondary"><%= ekos[i].name %></h6>
+                                                        <% } %>
+                                                </b>
+                                            </a>
+                                          </h5>
+                                        </div>
+                                        <div id="collapsesix" class="collapse" aria-labelledby="headingsix" data-parent="#accordionExample">
+                                            <div class="card-body">
+                                                <% for(let i=0;i<ekosMember.length;i++) {%>
+                                                    <div class="d-flex flex-row comment-row m-t-0">
+    
+                                                        <div class="comment-text w-100">
+                                                            <h6 class="font-medium "><%= i+1 %> <%= ekosMember[i].nameMember %></h6>
+                                                         
+                                                            <div class="container">
+                                                                <div class="row">
+                                                                  <div class="col-sm">
+                                                                    <i class='far fa-address-book'></i>
+                                                                     <span class="text-muted"  style="padding-left:10px">     <%= ekosMember[i].addressMember %></span> <br>
+                                                                     <i class='far fa-envelope-open'></i>
+                                                                     <span class="text-muted"  style="padding-left:10px">  <%= ekosMember[i].mailMember %></span> <br>
+                                                                  </div>
+                                                                  <div class="col-sm">
+                                                                    <i class='fas fa-phone-volume'></i>  
+                                                                    <span class="text-muted"  style="padding-left:20px"><%= ekosMember[i].mobilMember %></span> <br>
+                                                                    <i class='fas fa-phone-volume'></i>
+                                                                     <span class="text-muted" style="padding-left:20px"><%= ekosMember[i].fixMember %></span> <br>
+                                                                
+                                                                  </div>
+                                                                  <div class="col-sm">
+                                                                    <i class='far fa-clock'></i>
+                                                                    <span class="text-muted"  style="padding-left:20px"><%= ekosMember[i].writeMember %></span> <br>
+                                                                    <i class='fas fa-hand-holding-heart'></i>
+                                                                     <span class="text-muted" style="padding-left:20px"><%= ekosMember[i].stateMember %></span> <br>
+                                                                
+                                                                  </div>
+                                                                
+                                                                </div>
+                                                              </div>
+                                                                       
+                                                                
+                                                             
+                                                        </div>
+                                                    </div><hr>
+                                                    <% } %>
+                                              </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            
+            </div>    
+             </div>
+        </div>
+        <footer class="footer text-center">
+            Сва права задржана<a href="https://wrappixel.com">
+<b  style=" font-family: 'Maven Pro', sans-serif;" class="text-danger">ТодаБогдаВеб</b></a>.
+          </footer>
+            <!-- ============================================================== -->
+            <!-- End footer -->
+            <!-- ============================================================== -->
+        </div>
+        <!-- ============================================================== -->
+        <!-- End Page wrapper  -->
+        <!-- ============================================================== -->
+    </div>
+    <!-- ============================================================== -->
+    <!-- End Wrapper -->
+    <!-- ============================================================== -->
+    <!-- ============================================================== -->
+    <!-- All Jquery -->
+    <!-- ============================================================== -->
+    <script src="../../assets/libs/jquery/dist/jquery.min.js"></script>
+    <!-- Bootstrap tether Core JavaScript -->
+    <script src="../../assets/libs/popper.js/dist/umd/popper.min.js"></script>
+    <script src="../../assets/libs/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="../../assets/libs/perfect-scrollbar/dist/perfect-scrollbar.jquery.min.js"></script>
+    <script src="../../assets/extra-libs/sparkline/sparkline.js"></script>
+    <!--Wave Effects -->
+    <script src="../../dist/js/waves.js"></script>
+    <!--Menu sidebar -->
+    <script src="../../dist/js/sidebarmenu.js"></script>
+    <!--Custom JavaScript -->
+    <script src="../../dist/js/custom.min.js"></script>
+    <!--This page JavaScript -->
+    <!-- <script src="../../dist/js/pages/dashboards/dashboard1.js"></script> -->
+    <!-- Charts js Files -->
+    <script src="../../assets/libs/flot/excanvas.js"></script>
+    <script src="../../assets/libs/flot/jquery.flot.js"></script>
+    <script src="../../assets/libs/flot/jquery.flot.pie.js"></script>
+    <script src="../../assets/libs/flot/jquery.flot.time.js"></script>
+    <script src="../../assets/libs/flot/jquery.flot.stack.js"></script>
+    <script src="../../assets/libs/flot/jquery.flot.crosshair.js"></script>
+    <script src="../../assets/libs/flot.tooltip/js/jquery.flot.tooltip.min.js"></script>
+    <script src="../../dist/js/pages/chart/chart-page-init.js"></script>
+
+</body>
+
+</html>

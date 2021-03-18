@@ -1,0 +1,690 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- Tell the browser to be responsive to screen width -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <!-- Favicon icon -->
+    <link rel="icon" type="image/png" sizes="16x16" href="../../assets/images/favicon.png">
+    <script src="https://kit.fontawesome.com/yourcode.js" crossorigin="anonymous"></script>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Maven+Pro&display=swap" rel="stylesheet">
+    <title><%= name %></title>
+    <!-- Custom CSS -->
+    <link href="../../assets/libs/flot/css/float-chart.css" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link href="../../dist/css/style.min.css" rel="stylesheet">
+    <link href="../../css/main.css" rel="stylesheet">
+
+    <script>
+   
+    </script>
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+<![endif]-->
+</head>
+
+<body  style="background-color:#A2242F; font-family: 'Maven Pro', sans-serif;">
+    <!-- ============================================================== -->
+    <!-- Preloader - style you can find in spinners.css -->
+    <!-- ============================================================== -->
+    <div class="preloader" style="background-color:#A2242F; font-family: 'Maven Pro', sans-serif;">
+        <div class="lds-ripple" style="background-color:#A2242F; font-family: 'Maven Pro', sans-serif;">
+            <div class="lds-pos"></div>
+            <div class="lds-pos"></div>
+        </div>
+    </div>
+    <!-- ============================================================== -->
+    <!-- Main wrapper - style you can find in pages.scss -->
+    <!-- ============================================================== -->
+    <div id="main-wrapper" >
+        <!-- ============================================================== -->
+        <!-- Topbar header - style you can find in pages.scss -->
+        <!-- ============================================================== -->
+        <header class="topbar" data-navbarbg="skin5" style="background-color:#A2242F; font-family: 'Maven Pro', sans-serif; ">
+            <nav class="navbar top-navbar navbar-expand-md "  style="background-color:#A2242F; font-family: 'Maven Pro', sans-serif;">
+                <div class="navbar-header" data-logobg="skin5" style="background-color:#A2242F; font-family: 'Maven Pro', sans-serif;">
+                    <!-- This is for the sidebar toggle which is visible on mobile only -->
+                    <a class="nav-toggler waves-effect waves-light d-block d-md-none" 
+                    href="javascript:void(0)"><i class="ti-menu ti-close"></i></a>
+                    <!-- ============================================================== -->
+                    <!-- Logo -->
+                    <!-- ============================================================== -->
+                    <a class="navbar-brand" style="background-color:#A2242F; font-family: 'Maven Pro', sans-serif;"  >
+                        <!-- Logo icon -->
+                        <b class="logo-icon p-l-10" style="background-color:#A2242F; font-family: 'Maven Pro', sans-serif;">
+                            <!--You can put here icon as well // <i class="wi wi-sunset"></i> //-->
+                            <!-- Dark Logo icon -->
+                            <img src="images/srce.jpg" style="background-color:#A2242F; font-family: 'Maven Pro', sans-serif; margin-top: 4px;"
+                             alt="homepage" width="100px" class="light-logo" />
+                           
+                        </b>
+                      
+                    </a>
+  
+                    <!-- Toggle which is visible on mobile only -->
+                    <!-- ============================================================== -->
+                    <a class="topbartoggler d-block d-md-none waves-effect waves-light" href="javascript:void(0)" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><i class="ti-more"></i></a>
+                </div>
+                <!-- ============================================================== -->
+                <!-- End Logo -->
+                <!-- ============================================================== -->
+                <div class="navbar-collapse collapse" id="navbarSupportedContent" data-navbarbg="skin5"
+                style="background-color:white; font-family: 'Maven Pro', sans-serif;">
+                    <!-- ============================================================== -->
+                    <!-- toggle and nav items -->
+                    <!-- ============================================================== -->
+                    <ul class="navbar-nav float-left mr-auto"
+                    style="background-color:lightgrey; font-family: 'Maven Pro', sans-serif;">
+                        <li class="nav-item d-none d-md-block"><a class="nav-link sidebartoggler waves-effect waves-light" href="javascript:void(0)" data-sidebartype="mini-sidebar"><i class="mdi mdi-menu font-24"></i></a></li>
+                        <!-- ============================================================== -->
+                        <!-- create new -->
+                        <!-- ============================================================== -->
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                             <span style="font-family: 'Maven Pro', sans-serif;" class="d-none d-md-block text-dark">КРЕИРАЈ  <i class="fa fa-angle-down"></i></span>
+                             <span class="d-block d-md-none"><i class="fa fa-plus"></i></span>   
+                            </a>
+                            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                <a class="dropdown-item" href="admin/create">Координатора</a>
+                                <a class="dropdown-item" href="admin/create/subject">Остале субјекте</a>
+                            
+                        </li>
+                        <!-- ============================================================== -->
+                        <!-- Search -->
+                        <!-- ============================================================== -->
+                        <li class="nav-item search-box"> <a class="nav-link waves-effect waves-dark" href="javascript:void(0)"><i class="ti-search"></i></a>
+                            <form class="app-search position-absolute">
+                                <input type="text" class="form-control" placeholder="Search &amp; enter"> <a class="srh-btn"><i class="ti-close"></i></a>
+                            </form>
+                        </li>
+                    </ul>
+                    <!-- ============================================================== -->
+                    <!-- Right side toggle and nav items -->
+                    <!-- ============================================================== -->
+                    <ul class="navbar-nav float-right" >
+                     
+                   <div class="row"> 
+                        <!-- Messages -->
+                        <!-- ============================================================== -->
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle waves-effect waves-dark" href="" id="2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> 
+                                <i class='fas fa-envelope-open' style='font-size:24px;color:#A2242F' ></i>
+                            </a>
+                          
+                            <div class="dropdown-menu dropdown-menu-right mailbox animated bounceInDown" aria-labelledby="2">
+                                <ul class="list-style-none">
+                                    <li>
+                                        <div class="">
+                                             <!-- Message -->
+                                            <a href="javascript:void(0)" class="link border-top">
+                                                <div class="d-flex no-block align-items-center p-10">
+                                                    <span class="btn btn-success btn-circle"><i class="ti-calendar"></i></span>
+                                                    <div class="m-l-10">
+                                                        <h5 class="m-b-0">Секције</h5> 
+                                                        <span class="mail-desc">Пошаљи мејл(у припреми)</span> 
+                                                    </div>
+                                                </div>
+                                            </a>
+                                            <!-- Message -->
+                                            <a href="javascript:void(0)" class="link border-top">
+                                                <div class="d-flex no-block align-items-center p-10">
+                                                    <span class="btn btn-info btn-circle"><i class="ti-settings"></i></span>
+                                                    <div class="m-l-10">
+                                                        <h5 class="m-b-0">Подешавања</h5> 
+                                                        <span class="mail-desc">(у припреми)</span> 
+                                                    </div>
+                                                </div>
+                                            </a>
+                                            <!-- Message -->
+                                            <a href="javascript:void(0)" class="link border-top">
+                                                <div class="d-flex no-block align-items-center p-10">
+                                                    <span class="btn btn-primary btn-circle"><i class="ti-user"></i></span>
+                                                    <div class="m-l-10">
+                                                        <h5 class="m-b-0">Секције</h5> 
+                                                        <span class="mail-desc">Пошањи мејл(у припреми)</span> 
+                                                    </div>
+                                                </div>
+                                            </a>
+                                            <!-- Message -->
+                                            <a href="javascript:void(0)" class="link border-top">
+                                                <div class="d-flex no-block align-items-center p-10">
+                                                    <span class="btn btn-danger btn-circle"><i class="fa fa-link"></i></span>
+                                                    <div class="m-l-10">
+                                                        <h5 class="m-b-0">Сервис</h5> 
+                                                        <span class="mail-desc">(у припреми)</span> 
+                                                    </div>
+                                                </div>
+                                            </a>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </li>
+                        <!-- ============================================================== -->
+                      
+                        <!-- End Messages -->
+                        <!-- ============================================================== -->
+
+                        <!-- ============================================================== -->
+                        <!-- User profile and search -->
+                        <!-- ============================================================== -->
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle text-muted waves-effect waves-dark pro-pic" href="" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <i class='far fa-id-card' style="font-size:28px;color:#A2242F; "></i></a>
+                            <div class="dropdown-menu dropdown-menu-right user-dd animated">
+                                <a class="dropdown-item" href="javascript:void(0)"><i class="ti-user m-r-5 m-l-5"></i> у припреми</a>
+                                <a class="dropdown-item" href="javascript:void(0)"><i class="ti-wallet m-r-5 m-l-5"></i> у припреми</a>
+                                <a class="dropdown-item" href="javascript:void(0)"><i class="ti-email m-r-5 m-l-5"></i> у припреми</a>
+                                <div class="dropdown-divider"></div>
+                                <a class="dropdown-item" href="javascript:void(0)"><i class="ti-settings m-r-5 m-l-5"></i>у припреми</a>
+                                <div class="dropdown-divider"></div>
+                                <a class="dropdown-item text-danger" href="/logout"><i class="fa fa-power-off m-r-5 m-l-5"></i> Одјавите се</a>
+                                                </div>
+                        </li></div>
+                        <!-- ============================================================== -->
+                        <!-- User profile and search -->
+                        <!-- ============================================================== -->
+                    </ul>
+                </div>
+            </nav>
+        </header>
+        <!-- ============================================================== -->
+        <!-- End Topbar header -->
+        <!-- ============================================================== -->
+        <!-- ============================================================== -->
+        <!-- Left Sidebar - style you can find in sidebar.scss  -->
+        <!-- ============================================================== -->
+        <aside class="left-sidebar"  data-sidebarbg="skin5" style="background-color:#A2242F; font-family: 'Maven Pro', sans-serif;">
+            <!-- Sidebar scroll-->
+            <div class="scroll-sidebar" style="background-color:#A2242F; font-family: 'Maven Pro', sans-serif;">
+                <!-- Sidebar navigation-->
+                <nav class="sidebar-nav" style="background-color:#A2242F; font-family: 'Maven Pro', sans-serif;">
+                    <ul id="sidebarnav" class="p-t-30" >
+                        <li class="sidebar-item"> 
+                            <a class="sidebar-link" 
+                            style="background-color:#A2242F; font-family: 'Maven Pro', sans-serif;" href="/admin" aria-expanded="false">
+                            <i style='font-size:22px;color:white' class="mdi mdi-view-dashboard "></i><span class="hide-menu">Координатори</span></a></li>
+                            <li class="sidebar-item"> 
+                                    <a class="sidebar-link" 
+                                    style="background-color:#A2242F; font-family: 'Maven Pro', sans-serif;" href="member" aria-expanded="false">
+                                    <i class='fas fa-users' style='font-size:18px;color:white'></i><span class="hide-menu">Чланови</span></a></li>     
+                                    <li class="sidebar-item"> 
+                                        <a class="sidebar-link"
+                                        style="background-color:#A2242F; font-family: 'Maven Pro', sans-serif;"  href="friend"  aria-expanded="false">
+                                        <i class='far fa-handshake' style='font-size:18px;color:white'></i><span class="hide-menu">Пријатељи
+                                        </span></a></li>   
+                                        <li class="sidebar-item"> 
+                                            <a class="sidebar-link"
+                                            style="background-color:#A2242F; font-family: 'Maven Pro', sans-serif;"  href="shrine"  aria-expanded="false">
+                                            <i class='fas fa-hospital-alt' style='font-size:18px;color:white'></i><span class="hide-menu">Светиње
+                                            </span></a></li>     
+                                        <li class="sidebar-item"> 
+                                            <a class="sidebar-link"
+                                            style="background-color:#A2242F; font-family: 'Maven Pro', sans-serif;"  href="other" aria-expanded="false">
+                                            <i class='fas fa-user-plus' style='font-size:18px;color:white'></i>  <span class="hide-menu">Остали субјекти</span></a></li>     
+                                            <li class="sidebar-item"> 
+                                                <a class="sidebar-link "
+                                                style="background-color:#A2242F; font-family: 'Maven Pro', sans-serif;" href="/koordinator" aria-expanded="false">
+                                                <i class='far fa-id-card' style='font-size:22px;color:white'></i> <span class="hide-menu">Секције</span></a></li>     
+                                              
+                                            <li class="sidebar-item"> 
+                                                <a class="sidebar-link"
+                                                style="background-color:#A2242F; font-family: 'Maven Pro', sans-serif;" href="/koordinator" aria-expanded="false">
+                                                <i class='fas fa-chart-line' style='font-size:18px;color:white'></i><span class="hide-menu">Статистика</span></a></li>     
+                                                           
+                    </ul>
+                </nav>
+                <!-- End Sidebar navigation -->
+            </div>
+            <!-- End Sidebar scroll-->
+        </aside>
+        <!-- ============================================================== -->
+        <!-- End Left Sidebar - style you can find in sidebar.scss  -->
+        <!-- ============================================================== -->
+        <!-- ============================================================== -->
+        <!-- Page wrapper  -->
+        <!-- ============================================================== -->
+        <div class="page-wrapper" >
+            <!-- ============================================================== -->
+            <!-- Bread crumb and right sidebar toggle -->
+            <!-- ============================================================== -->
+             <div class="page-breadcrumb" style="margin-top: 2%;">
+                <div class="row">
+                    <div class="col-12 d-flex no-block align-items-center">
+                        <h4 class="page-title" >Админ страна</h4>
+            
+                    </div>
+                </div>
+            </div>
+
+            <!-- Container fluid  -->
+            <!-- ============================================================== -->
+            <div class="container-fluid">
+                <!-- ============================================================== -->
+                <!-- Sales Cards  -->
+                <!-- ============================================================== 
+                <div class="row">
+                 
+                    <div class="col-md-6 col-lg-2 col-xlg-3">
+                        <div class="card card-hover">
+                            <div class="box bg-cyan text-center">
+                                <h1 class="font-light text-white"><i class="mdi mdi-view-dashboard"></i></h1>
+                                <h6 class="text-white">Насловна</h6>
+                            </div>
+                        </div>
+                    </div>
+                
+                    <div class="col-md-6 col-lg-4 col-xlg-3">
+                        <div class="card card-hover">
+                            <div class="box bg-success text-center">
+                                <h1 class="font-light text-white"><i class="mdi mdi-chart-areaspline"></i></h1>
+                                <h6 class="text-white">Charts</h6>
+                            </div>
+                        </div>
+                    </div>
+               
+                    <div class="col-md-6 col-lg-2 col-xlg-3">
+                        <div class="card card-hover">
+                            <div class="box bg-warning text-center">
+                                <h1 class="font-light text-white"><i class="mdi mdi-collage"></i></h1>
+                                <h6 class="text-white">Widgets</h6>
+                            </div>
+                        </div>
+                    </div>
+      
+                    <div class="col-md-6 col-lg-2 col-xlg-3">
+                        <div class="card card-hover">
+                            <div class="box bg-danger text-center">
+                                <h1 class="font-light text-white"><i class="mdi mdi-border-outside"></i></h1>
+                                <h6 class="text-white">Tables</h6>
+                            </div>
+                        </div>
+                    </div>
+              
+                    <div class="col-md-6 col-lg-2 col-xlg-3">
+                        <div class="card card-hover">
+                            <div class="box bg-info text-center">
+                                <h1 class="font-light text-white"><i class="mdi mdi-arrow-all"></i></h1>
+                                <h6 class="text-white">Full Width</h6>
+                            </div>
+                        </div>
+                    </div>
+                  
+                </div-->
+               
+                <div class="row">
+                    <!-- column -->
+                    <div class="col-lg-12">
+                        <div class="card cordView">
+                            <div class="card-body">
+                                    <h4 class="card-title">КООРДИНАТОРИ</h4> 
+                                  <hr>
+                            </div>
+                      
+                            <div class="comment-widgets scrollable">
+                                <!-- Comment Row -->
+                                <% for(let i=0;i<cords.length;i++) {%>
+                                <div class="d-flex flex-row comment-row m-t-0">
+
+                                    <div class="comment-text w-100">
+                                        <h6 class="font-medium "><%= i+1 %> <%= cords[i].name %></h6>
+                                        <i style="padding:1%;" class='fas fa-briefcase'></i>
+                                        <span class="text-muted"><%= cords[i].job %></span> <br>
+                                        <span class="m-b-15 d-block"> <em><%= cords[i].note %> </em></span>
+                                        <div class="container">
+                                            <div class="row">
+                                              <div class="col-sm">
+                                                <i class='far fa-address-book'></i>
+                                                 <span class="text-muted"  style="padding-left:10px">     <%= cords[i].address %></span> <br>
+                                                 <i class='far fa-envelope-open'></i>
+                                                 <span class="text-muted"  style="padding-left:10px">  <%= cords[i].mail %></span> <br>
+                                              </div>
+                                              <div class="col-sm">
+                                                <i class='fas fa-phone-volume'></i>  
+                                                <span class="text-muted"  style="padding-left:20px"><%= cords[i].mobil %></span> <br>
+                                                <i class='fas fa-phone-volume'></i>
+                                                 <span class="text-muted" style="padding-left:20px"><%= cords[i].fix %></span> <br>
+                                            
+                                              </div>
+                                              <div class="col-sm">
+                                               <b> ЈМБГ: </b>
+                                                <span class="text-muted"  style="padding-left:30px"><%= cords[i].number %></span> <br>
+                                               <b> БРЛК:</b> 
+                                                <span class="text-muted"  style="padding-left:30px"><%= cords[i].person %></span> <br>
+                                                <b> ЧЛАН ОД:</b> 
+                                                <span class="text-muted"  style="padding-left:3px"><%= cords[i].date %></span> <br>
+                                             
+                                      
+                                              </div>
+                                            </div>
+                                          </div>
+                                                   <div class="comment-footer" style="margin-top: 10px;">
+                                            
+                                            <button type="button" style="background-color: rgb(252, 204, 204);" class="btn  btn-sm">Измени</button>
+                                            <button type="button" style="background-color: rgb(243, 77, 77);" class="btn  btn-sm">
+                                                <%= cords[i].role %>
+                                            </button>
+                                            <button type="button" style="background-color: rgb(170, 4, 4);" class="btn  btn-sm delete-cord"
+                                            data-id="<%= cords[i]._id %>">
+                                                Обриши</button>
+                                        </div>
+                                    </div>
+                                </div><hr>
+                                <% } %>
+ 
+                            </div>
+                        </div>
+                        <div class="card memberView">
+                            <div class="card-body">
+                                <a class="float-right" style="border:1px solid black; padding:2px; font-family: 'Maven Pro', sans-serif;" 
+                                href="/admin/clanarine">  <i class='far fa-address-book'></i>  Чланарине</a> 
+                                <h4 class="card-title">ЧЛАНОВИ</h4>      <hr>
+                            </div>
+                      
+                            <div class="comment-widgets scrollable">
+                                <!-- Comment Row -->
+                                <% for(let i=0;i<members.length;i++) {%>
+                                <div class="d-flex flex-row comment-row m-t-0">
+
+                                    <div class="comment-text w-100">
+                                        <h6 class="font-medium "><%= members[i].nameMember %></h6>
+                                        <i style="padding:1%;" class='fas fa-briefcase'></i>
+                                        <span class="text-muted"><%= members[i].jobMember %></span> <br>
+                                        <span class="m-b-15 d-block"> <em><%= members[i].noteMember %> </em></span>
+                                        <div class="container">
+                                            <div class="row">
+                                              <div class="col-sm">
+                                                <i class='far fa-address-book'></i>
+                                                 <span class="text-muted"  style="padding-left:10px">     <%= members[i].addressMember %></span> <br>
+                                                 <i class='far fa-envelope-open'></i>
+                                                 <span class="text-muted"  style="padding-left:10px">  <%= members[i].mailMember %></span> <br>
+                                              </div>
+                                              <div class="col-sm">
+                                                <i class='fas fa-phone-volume'></i>  
+                                                <span class="text-muted"  style="padding-left:20px"><%= members[i].mobilMember %></span> <br>
+                                                <i class='fas fa-phone-volume'></i>
+                                                 <span class="text-muted" style="padding-left:20px"><%= members[i].fixMember %></span> <br>
+                                            
+                                              </div>
+                                              <div class="col-sm">
+                                               <b> ЈМБГ: </b>
+                                                <span class="text-muted"  style="padding-left:30px"><%= members[i].numberMember %></span> <br>
+                                               <b> БРЛК:</b> 
+                                                <span class="text-muted"  style="padding-left:30px"><%= members[i].personMember %></span> <br>
+                                                <b> ЧЛАН ОД:</b> 
+                                                <span class="text-muted"  style="padding-left:3px"><%= members[i].writeMember %></span> <br>
+                                                <b> ЧЛАН БР:</b> 
+                                                <span class="text-muted"  style="padding-left:3px"><%= members[i].xxxMember %></span> <br>
+                                             
+                                      
+                                              </div>
+                                            </div>
+                                          </div>
+                                                   <div class="comment-footer" style="margin-top: 10px;">
+                                            
+                                   <a href="/admin/editMember/<%= members[i]._id %>">  
+                                        <button type="button" style="background-color: rgb(252, 204, 204);" class="btn  btn-sm">
+                                            Измени</button></a>
+                                            <button type="button" style="background-color: rgb(243, 77, 77); 
+                                            font-family: 'Maven Pro', sans-serif;" class="btn  btn-sm">
+                                                <%= members[i].sectionMember %>
+                                            </button>
+                                            <button type="button" style="background-color: rgb(170, 4, 4);" class="btn  btn-sm delete-cord"
+                                            data-id="<%= members[i]._id %>">
+                                                Обриши</button>
+                                        </div>
+                                    </div>
+                                </div><hr>
+                                <% } %>
+ 
+                            </div>
+                        </div>
+                        <div class="card friendView">
+                            <div class="card-body">
+                                <h4 class="card-title">ПРИЈАТЕЉИ</h4>      <hr>
+                            </div>
+                      
+                            <div class="comment-widgets scrollable">
+                                <!-- Comment Row -->
+                                <% for(let i=0;i<friends.length;i++) {%>
+                                <div class="d-flex flex-row comment-row m-t-0">
+
+                                    <div class="comment-text w-100">
+                                        <h6 class="font-medium "><%= friends[i].nameFriend %></h6>
+                                        <i style="padding:1%;" class='fas fa-briefcase'></i>
+                                        <span class="text-muted"><%= friends[i].jobFriend %></span> <br>
+                                        <span class="m-b-15 d-block"> <em><%= friends[i].noteFriend %> </em></span>
+                                        <div class="container">
+                                            <div class="row">
+                                              <div class="col-sm">
+                                                <i class='far fa-address-book'></i>
+                                                 <span class="text-muted"  style="padding-left:10px">     <%= friends[i].addressFriend %></span> <br>
+                                                 <i class='far fa-envelope-open'></i>
+                                                 <span class="text-muted"  style="padding-left:10px">  <%= friends[i].mailFriend %></span> <br>
+                                              </div>
+                                              <div class="col-sm">
+                                                <i class='fas fa-phone-volume'></i>  
+                                                <span class="text-muted"  style="padding-left:20px"><%= friends[i].mobilFriend %></span> <br>
+                                                <i class='fas fa-phone-volume'></i>
+                                                 <span class="text-muted" style="padding-left:20px"><%= friends[i].fixFriend %></span> <br>
+                                            
+                                              </div>
+                                              <div class="col-sm">
+                                               <b> ЈМБГ: </b>
+                                                <span class="text-muted"  style="padding-left:30px"><%= friends[i].numberFriend %></span> <br>
+                                               <b> БРЛК:</b> 
+                                                <span class="text-muted"  style="padding-left:30px"><%= friends[i].personFriend %></span> <br>
+                                                <b>Датум рођења:</b> 
+                                                <span class="text-muted"  style="padding-left:3px"><%= friends[i].fondFriend %></span> <br>
+                                             
+                                      
+                                              </div>
+                                            </div>
+                                          </div>
+                                                   <div class="comment-footer" style="margin-top: 10px;">
+                                                    <a href="/admin/editMember/<%= friends[i]._id %>">  
+                                            <button type="button" style="background-color: rgb(252, 204, 204); 
+                                            font-family: 'Maven Pro', sans-serif;" class="btn  btn-sm">Измени</button></a>
+                                            <button type="button" style="background-color: rgb(243, 77, 77);" class="btn  btn-sm">
+                                                <%= friends[i].sectionFriend %>
+                                            </button>
+                                            <button type="button" style="background-color: rgb(170, 4, 4);" class="btn  btn-sm delete-cord"
+                                            data-id="<%= friends[i]._id %>">
+                                                Обриши</button>
+                                        </div>
+                                    </div>
+                                </div><hr>
+                                <% } %>
+ 
+                            </div>
+                        </div>
+                        <div class="card shrineView">
+                            <div class="card-body">
+                                <h4 class="card-title">СВЕТИЊЕ</h4>      <hr>
+                            </div>
+                      
+                            <div class="comment-widgets scrollable">
+                                <!-- Comment Row -->
+                                <% for(let i=0;i<shrines.length;i++) {%>
+                                <div class="d-flex flex-row comment-row m-t-0">
+
+                                    <div class="comment-text w-100">
+                                        <h6 class="font-medium "><%= shrines[i].nameShrine %></h6>
+                                        
+                                        <span class="m-b-15 d-block"> <em><%= shrines[i].noteShrine %> </em></span>
+                                        <div class="container">
+                                            <div class="row">
+                                              <div class="col-sm">
+                                                <i class='far fa-address-book'></i>
+                                                 <span class="text-muted"  style="padding-left:10px">     <%= shrines[i].addressShrine %></span> <br>
+                                                 <i class='far fa-envelope-open'></i>
+                                                 <span class="text-muted"  style="padding-left:10px">  <%= shrines[i].mailShrine %></span> <br>
+                                              </div>
+                                              <div class="col-sm">
+                                                <i class='fas fa-phone-volume'></i>  
+                                                <span class="text-muted"  style="padding-left:20px"><%= shrines[i].mobilShrine %></span> <br>
+                                                <i class='fas fa-phone-volume'></i>
+                                                 <span class="text-muted" style="padding-left:20px"><%= shrines[i].fixShrine %></span> <br>
+                                            
+                                              </div>
+                                              <div class="col-sm">
+                                               <b> ЈМБГ: </b>
+                                                <span class="text-muted"  style="padding-left:30px"><%= shrines[i].numberShrine %></span> <br>
+                                               <b> БРЛК:</b> 
+                                                <span class="text-muted"  style="padding-left:30px"><%= shrines[i].personShrine %></span> <br>
+                                                <b> ОСНИВАЊЕ:</b> 
+                                                <span class="text-muted"  style="padding-left:3px"><%= shrines[i].fondShrine %></span> <br>
+                                             
+                                      
+                                              </div>
+                                            </div>
+                                          </div>
+                                                   <div class="comment-footer" style="margin-top: 10px;">
+                                                    <a href="/admin/editMember/<%= shrines[i]._id %>">  
+                                            <button type="button" style="background-color: rgb(252, 204, 204);" class="btn  btn-sm">Измени</button></a>
+                                            <button type="button" style="background-color: rgb(243, 77, 77);" class="btn  btn-sm">
+                                                <%= shrines[i].sectionShrine %>
+                                            </button>
+                                            <button type="button" style="background-color: rgb(170, 4, 4);" class="btn  btn-sm delete-cord"
+                                            data-id="<%= shrines[i]._id %>">
+                                                Обриши</button>
+                                        </div>
+                                    </div>
+                                </div><hr>
+                                <% } %>
+ 
+                            </div>
+                        </div>
+                        <div class="card otherView">
+                            <div class="card-body">
+                                <h4 class="card-title">ОСТАЛИ СУБЈЕКТИ</h4>      <hr>
+                            </div>
+                      
+                            <div class="comment-widgets scrollable">
+                                <!-- Comment Row -->
+                                <% for(let i=0;i<others.length;i++) {%>
+                                <div class="d-flex flex-row comment-row m-t-0">
+
+                                    <div class="comment-text w-100">
+                                        <h6 class="font-medium "><%= others[i].nameOther %></h6>
+                                        <i style="padding:1%;" class='fas fa-briefcase'></i>
+                                        <span class="text-muted"><%= others[i].jobOther %></span> <br>
+                                        <span class="m-b-15 d-block"> <em><%= others[i].noteOther %> </em></span>
+                                        <div class="container">
+                                            <div class="row">
+                                              <div class="col-sm">
+                                                <i class='far fa-address-book'></i>
+                                                 <span class="text-muted"  style="padding-left:10px">     <%= others[i].addressOther %></span> <br>
+                                                 <i class='far fa-envelope-open'></i>
+                                                 <span class="text-muted"  style="padding-left:10px">  <%= others[i].mailOther %></span> <br>
+                                              </div>
+                                              <div class="col-sm">
+                                                <i class='fas fa-phone-volume'></i>  
+                                                <span class="text-muted"  style="padding-left:20px"><%= others[i].mobilOther %></span> <br>
+                                                <i class='fas fa-phone-volume'></i>
+                                                 <span class="text-muted" style="padding-left:20px"><%= others[i].fixOther %></span> <br>
+                                            
+                                              </div>
+                                              <div class="col-sm">
+                                               <b> ЈМБГ: </b>
+                                                <span class="text-muted"  style="padding-left:30px"><%= others[i].numberOther %></span> <br>
+                                               <b> БРЛК:</b> 
+                                                <span class="text-muted"  style="padding-left:30px"><%= others[i].personOther %></span> <br>
+                                                <b> Основано:</b> 
+                                                <span class="text-muted"  style="padding-left:3px"><%= others[i].fondOther %></span> <br>
+                                             
+                                      
+                                              </div>
+                                            </div>
+                                          </div>
+                                                   <div class="comment-footer" style="margin-top: 10px;">
+                                                    <a href="/admin/editMember/<%= others[i]._id %>">  
+                                            <button type="button" style="background-color: rgb(252, 204, 204);" class="btn  btn-sm">Измени</button></a>
+                                            <button type="button" style="background-color: rgb(243, 77, 77);" class="btn  btn-sm">
+                                                <%= others[i].sectionOther %>
+                                            </button>
+                                            <button type="button" style="background-color: rgb(170, 4, 4);" class="btn  btn-sm delete-cord"
+                                            data-id="<%= others[i]._id %>">
+                                                Обриши</button>
+                                        </div>
+                                    </div>
+                                </div><hr>
+                                <% } %>
+ 
+                            </div>
+                        </div>
+</div>
+                      
+               
+              
+                </div>
+            </div>
+            <footer class="footer text-center">
+              Сва права задржана<a href="https://wrappixel.com">
+  <b  style=" font-family: 'Maven Pro', sans-serif;" class="text-danger">ТодаБогдаВеб</b></a>.
+            </footer>
+            <!-- ============================================================== -->
+            <!-- End footer -->
+            <!-- ============================================================== -->
+        </div>
+        <!-- ============================================================== -->
+        <!-- End Page wrapper  -->
+        <!-- ============================================================== -->
+    </div>
+    <!-- ============================================================== -->
+    <!-- End Wrapper -->
+    <script src="../../dist/js/wave.js"></script>
+    <!-- ============================================================== -->
+    <!-- ============================================================== -->
+    <!-- All Jquery -->
+    <!-- ============================================================== -->
+    <script src="../../assets/libs/jquery/dist/jquery.min.js"></script>
+    <!-- Bootstrap tether Core JavaScript -->
+    <script src="../../assets/libs/popper.js/dist/umd/popper.min.js"></script>
+    <script src="../../assets/libs/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="../../assets/libs/perfect-scrollbar/dist/perfect-scrollbar.jquery.min.js"></script>
+    <script src="../../assets/extra-libs/sparkline/sparkline.js"></script>
+    <!--Wave Effects -->
+    <script src="../../dist/js/waves.js"></script>
+    <!--Menu sidebar -->
+    <script src="../../dist/js/sidebarmenu.js"></script>
+    <!--Custom JavaScript -->
+    <script src="../../dist/js/custom.min.js"></script>
+    <!--This page JavaScript -->
+    <!-- <script src="../../dist/js/pages/dashboards/dashboard1.js"></script> -->
+    <!-- Charts js Files -->
+    <script src="../../assets/libs/flot/excanvas.js"></script>
+    <script src="../../assets/libs/flot/jquery.flot.js"></script>
+    <script src="../../assets/libs/flot/jquery.flot.pie.js"></script>
+    <script src="../../assets/libs/flot/jquery.flot.time.js"></script>
+    <script src="../../assets/libs/flot/jquery.flot.stack.js"></script>
+    <script src="../../assets/libs/flot/jquery.flot.crosshair.js"></script>
+    <script src="../../assets/libs/flot.tooltip/js/jquery.flot.tooltip.min.js"></script>
+    <script src="../../dist/js/pages/chart/chart-page-init.js"></script>
+<script>
+    $(".delete-cord").on('click', function(){
+        let id = $(this).attr('data-id');
+        let potvrda = confirm("Да ли сте сигурни да желите да избришете координатора?");
+        if(potvrda){
+            $.ajax({
+                url:`/admin/delete/user/${id}`
+            })
+            .then(res =>{
+                if(res == "Ok"){
+                    window.location.href = "/admin";
+                }
+            })
+        }
+    })
+</script>
+</body>
+
+</html>

@@ -1,0 +1,568 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- Tell the browser to be responsive to screen width -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <!-- Favicon icon -->
+    <link rel="icon" type="image/png" sizes="16x16" href="../../assets/images/favicon.png">
+    <script src="https://kit.fontawesome.com/yourcode.js" crossorigin="anonymous"></script>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Maven+Pro&display=swap" rel="stylesheet">
+    <title>Креирање субјеката</title>
+    <!-- Custom CSS -->
+    <link href="../../assets/libs/flot/css/float-chart.css" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link href="../../dist/css/style.min.css" rel="stylesheet">
+    <link href="../../css/main.css" rel="stylesheet">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+<![endif]-->
+</head>
+
+<body  style="background-color:#A2242F; font-family: 'Maven Pro', sans-serif; font-family: 'Maven Pro', sans-serif;">
+    <!-- ============================================================== -->
+    <!-- Preloader - style you can find in spinners.css -->
+    <!-- ============================================================== -->
+    <div class="preloader" style="background-color:#A2242F; font-family: 'Maven Pro', sans-serif;">
+        <div class="lds-ripple" style="background-color:#A2242F; font-family: 'Maven Pro', sans-serif;">
+            <div class="lds-pos"></div>
+            <div class="lds-pos"></div>
+        </div>
+    </div>
+    <!-- ============================================================== -->
+    <!-- Main wrapper - style you can find in pages.scss -->
+    <!-- ============================================================== -->
+    <div id="main-wrapper" >
+        <!-- ============================================================== -->
+        <!-- Topbar header - style you can find in pages.scss -->
+        <!-- ============================================================== -->
+        <header class="topbar" data-navbarbg="skin5" style="background-color:#A2242F; font-family: 'Maven Pro', sans-serif; ">
+            <nav class="navbar top-navbar navbar-expand-md "  style="background-color:#A2242F; font-family: 'Maven Pro', sans-serif;">
+                <div class="navbar-header" data-logobg="skin5" style="background-color:#A2242F; font-family: 'Maven Pro', sans-serif;">
+                    <!-- This is for the sidebar toggle which is visible on mobile only -->
+                    <a class="nav-toggler waves-effect waves-light d-block d-md-none" 
+                    href="javascript:void(0)"><i class="ti-menu ti-close"></i></a>
+                    <!-- ============================================================== -->
+                    <!-- Logo -->
+                    <!-- ============================================================== -->
+                    <a class="navbar-brand" style="background-color:#A2242F; font-family: 'Maven Pro', sans-serif;"  >
+                        <!-- Logo icon -->
+                        <b class="logo-icon p-l-10" style="background-color:#A2242F; font-family: 'Maven Pro', sans-serif;">
+                            <!--You can put here icon as well // <i class="wi wi-sunset"></i> //-->
+                            <!-- Dark Logo icon -->
+                            <img src="/images/srce.jpg" style="background-color:#A2242F; font-family: 'Maven Pro', sans-serif; margin-top: 4px;"
+                             alt="homepage" width="100px" class="light-logo" />
+                           
+                        </b>
+                      
+                    </a>
+  
+                    <!-- Toggle which is visible on mobile only -->
+                    <!-- ============================================================== -->
+                    <a class="topbartoggler d-block d-md-none waves-effect waves-light" href="javascript:void(0)" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><i class="ti-more"></i></a>
+                </div>
+                <!-- ============================================================== -->
+                <!-- End Logo -->
+                <!-- ============================================================== -->
+                <div class="navbar-collapse collapse" id="navbarSupportedContent" data-navbarbg="skin5"
+                style="background-color:white; font-family: 'Maven Pro', sans-serif;">
+                    <!-- ============================================================== -->
+                    <!-- toggle and nav items -->
+                    <!-- ============================================================== -->
+                    <ul class="navbar-nav float-left mr-auto"
+                    style="background-color:lightgrey; font-family: 'Maven Pro', sans-serif;">
+                        <li class="nav-item d-none d-md-block"><a class="nav-link sidebartoggler waves-effect waves-light" href="javascript:void(0)" data-sidebartype="mini-sidebar"><i class="mdi mdi-menu font-24"></i></a></li>
+                        <!-- ============================================================== -->
+                        <!-- create new -->
+                        <!-- ============================================================== -->
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                             <span style="font-family: 'Maven Pro', sans-serif;" class="d-none d-md-block text-dark">КРЕИРАЈ  <i class="fa fa-angle-down"></i></span>
+                             <span class="d-block d-md-none"><i class="fa fa-plus"></i></span>   
+                            </a>
+                            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                <a class="dropdown-item" href="/admin/create">Координатора</a>
+                                <a class="dropdown-item" href="">Остале субјекте</a>
+                            
+                        </li>
+                     
+                    </ul>
+                 
+                </div>
+            </nav>
+        </header>
+        <!-- ============================================================== -->
+        <!-- End Topbar header -->
+        <!-- ============================================================== -->
+        <!-- ============================================================== -->
+        <!-- Left Sidebar - style you can find in sidebar.scss  -->
+        <!-- ============================================================== -->
+        <aside class="left-sidebar"  data-sidebarbg="skin5" style="background-color:#A2242F; font-family: 'Maven Pro', sans-serif;">
+            <!-- Sidebar scroll-->
+            <div class="scroll-sidebar" style="background-color:#A2242F; font-family: 'Maven Pro', sans-serif;">
+                <!-- Sidebar navigation-->
+                <nav class="sidebar-nav" style="background-color:#A2242F; font-family: 'Maven Pro', sans-serif;">
+                    <ul id="sidebarnav" class="p-t-30" >
+                        <li class="sidebar-item"> 
+                            <a class="sidebar-link" 
+                            style="background-color:#A2242F; font-family: 'Maven Pro', sans-serif;" href="/admin" aria-expanded="false">
+                            <i class="mdi mdi-view-dashboard active"></i><span class="hide-menu">Насловна</span></a></li>
+                            <li class="sidebar-item"> 
+                                <a class="sidebar-link "
+                                style="background-color:#A2242F; font-family: 'Maven Pro', sans-serif;" href="/koordinator" aria-expanded="false">
+                                <i class="mdi mdi-view-dashboard"></i><span class="hide-menu">Координатори</span></a></li>     
+                                <li class="sidebar-item"> 
+                                    <a class="sidebar-link" 
+                                    style="background-color:#A2242F; font-family: 'Maven Pro', sans-serif;"href="/koordinator" aria-expanded="false">
+                                    <i class="mdi mdi-view-dashboard"></i><span class="hide-menu">Чланови</span></a></li>     
+                                    <li class="sidebar-item"> 
+                                        <a class="sidebar-link"
+                                        style="background-color:#A2242F; font-family: 'Maven Pro', sans-serif;" href="/koordinator" aria-expanded="false">
+                                        <i class="mdi mdi-view-dashboard"></i><span class="hide-menu">Пријатељи
+                                        </span></a></li>     
+                                        <li class="sidebar-item"> 
+                                            <a class="sidebar-link"
+                                            style="background-color:#A2242F; font-family: 'Maven Pro', sans-serif;" href="/koordinator" aria-expanded="false">
+                                            <i class="mdi mdi-view-dashboard"></i><span class="hide-menu">Остали субјекти</span></a></li>     
+                                            <li class="sidebar-item"> 
+                                                <a class="sidebar-link"
+                                                style="background-color:#A2242F; font-family: 'Maven Pro', sans-serif;" href="/koordinator" aria-expanded="false">
+                                                <i class="mdi mdi-view-dashboard"></i><span class="hide-menu">Статистика</span></a></li>     
+                                                           
+                    </ul>
+                </nav>
+                <!-- End Sidebar navigation -->
+            </div>
+            <!-- End Sidebar scroll-->
+        </aside>
+        <!-- Page wrapper  -->
+        <!-- ============================================================== -->
+        <div class="page-wrapper">
+            <!-- ============================================================== -->
+            <!-- Bread crumb and right sidebar toggle -->
+            <!-- ============================================================== -->
+             <div class="page-breadcrumb">
+                <div class="row">
+                    <div class="col-12 d-flex no-block align-items-center" style="margin-top:2%;">
+                        <h4 class="page-title">Лични подаци</h4>
+            
+                    </div>
+                </div>
+            </div>
+     <div class="container-fluid">
+         
+         <div class="row">
+            <div class="col-12">
+                <div class="dropdown">
+                    <button class="btn  dropdown-toggle form-control" type="button" id="dropdownMenuButton" 
+                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" 
+                    style="background-color: rgb(66, 2, 2);  font-family: 'Maven Pro', sans-serif; color:#999;">
+                    Креирајте садржај
+                    </button>
+                    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                      <a class="dropdown-item" href="firstForm" style=" font-family: 'Maven Pro', sans-serif;">Чланови</a>
+                      <a class="dropdown-item" href="secondForm" style=" font-family: 'Maven Pro', sans-serif;">Пријатељи</a>
+                      <a class="dropdown-item" href="thirdForm" style=" font-family: 'Maven Pro', sans-serif;">Светиње</a>
+                      <a class="dropdown-item" href="forthForm" style=" font-family: 'Maven Pro', sans-serif;">Остало</a>
+                    </div>
+                  </div>
+        <!--Kreiranje clanova  ============================================================== -->
+                  
+            <form class="member" method="POST" action="/admin/create/saveMember">
+
+                   <div class="form-group"  style="margin-top: 2%;" >
+                     
+                        <select name="sectionMember"  class="form-control" >
+                            <option style="color:red; font-weight: bold;" >ИЗАБЕРИ СЕКЦИЈУ :</option>
+                            <option value="Музичка секција">Музичка секција</option>
+                            <option value="Грађевинска секција">Грађевинска секција</option>
+                            <option value="Спортска секција">Спортска секција</option>
+                            <option value="Језичка секција">Језичка секција</option>
+                            <option value="Еколошка секција">Еколошка секција</option>
+                            <option value="Туристичка секција">Туристичка секција</option>
+                            <option value="Медицинска секција">Медицинска секција</option>
+                        </select>
+                    </div>
+                    <div class="card-body">
+                        <div class="form-group row">
+                            <label for="cono1" class="col-sm-3 text-left control-label col-form-label">Члан од</label>
+                            <div class="col-sm-9">
+                                <input type="date" name="writeMember" class="form-control" id="cono1" placeholder="Датум">
+                            </div>
+                        </div>
+                   
+                        <div class="form-group row">
+                            <label for="fname" class="col-sm-3 text-left control-label col-form-label">Члан</label>
+                            <div class="col-sm-9">
+                                <input type="text" name="nameMember" class="form-control" id="fname" placeholder="Име и презиме">
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label for="lname" class="col-sm-3 text-left control-label col-form-label">Члански број</label>
+                            <div class="col-sm-9">
+                                <input type="text" name="xxxMember" class="form-control" id="lname" placeholder="Редни број">
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label for="lname" class="col-sm-3 text-left control-label col-form-label">Адреса</label>
+                            <div class="col-sm-9">
+                                <input type="text" name="addressMember" class="form-control" id="lname" placeholder="Адреса становања">
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label for="email1" class="col-sm-3 text-left control-label col-form-label">Мејл</label>
+                            <div class="col-sm-9">
+                                <input type="text" name="mailMember" class="form-control" id="email1" placeholder="Мејл адреса">
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label for="cono1" class="col-sm-3 text-left control-label col-form-label">Телефон</label>
+                            <div class="col-sm-9">
+                                <input type="text" name="fixMember" class="form-control" id="cono1" placeholder="Фиксни телефон">
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label for="cono1" class="col-sm-3 text-left control-label col-form-label">Телефон</label>
+                            <div class="col-sm-9">
+                                <input type="text" name="mobilMember" class="form-control" id="cono1" placeholder="Мобилни телефон">
+                            </div>
+                        </div>
+                    
+                        <div class="form-group row">
+                            <label for="fname" class="col-sm-3 text-left control-label col-form-label">БЛК</label>
+                            <div class="col-sm-9">
+                                <input type="text" name="personMember" class="form-control" id="fname" placeholder="Број личне карте">
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label for="lname" class="col-sm-3 text-left control-label col-form-label">ЈМБГ</label>
+                            <div class="col-sm-9">
+                                <input type="text" name="numberMember" class="form-control" id="lname" placeholder="Матични број">
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label for="lname" class="col-sm-3 text-left control-label col-form-label">Занимање</label>
+                            <div class="col-sm-9">
+                                <input type="text" name="jobMember" class="form-control" id="lname" placeholder="Област рада">
+                            </div>
+                        </div>
+                       
+                        <div class="form-group row">
+                            <label  class="col-sm-3 text-left control-label col-form-label" for="">Напомена</label>
+                            <textarea style="margin-left:2% ;" name="noteMember" id="" cols="90" rows="3"></textarea>
+                            </div>
+                      </div>
+                      
+                  <button type="submit" style="background-color:rgb(66, 2, 2) ;" class="btn btn-primary form-control">Сачувај</button>
+
+                      </form>
+        <!--Kreiranje prijatelja  ============================================================== -->
+        <form class="friend" method="POST" action="/admin/create/saveFriend">
+
+            <div class="form-group"  style="margin-top: 2%;">
+              
+                 <select name="sectionFriend" class="form-control" >
+                     <option style="color:red; font-weight: bold;">ПРИЈАТЕЉИ :</option>
+                     <option value="Свештеници">Свештеници</option>
+                     <option value="Књижевници">Књижевници</option>
+                     <option value="Правници">Правници</option>
+                     <option value="Глумци">Глумци</option>
+                     <option value="Информатичари">Информатичари</option>
+                     <option value="Економисти">Економисти</option>
+                     <option value="Јавне личности">Јавне личности</option>
+                 </select>
+             </div>
+             <div class="card-body">
+            
+                 <div class="form-group row">
+                     <label for="fname" class="col-sm-3 text-left control-label col-form-label">Пријатељ фондације</label>
+                     <div class="col-sm-9">
+                         <input type="text" name="nameFriend" class="form-control" id="fname" placeholder="Име и презиме">
+                     </div>
+                 </div>
+         
+                 <div class="form-group row">
+                     <label for="lname" class="col-sm-3 text-left control-label col-form-label">Адреса</label>
+                     <div class="col-sm-9">
+                         <input type="text" name="addressFriend" class="form-control" id="lname" placeholder="Адреса становања">
+                     </div>
+                 </div>
+                 <div class="form-group row">
+                     <label for="email1" class="col-sm-3 text-left control-label col-form-label">Мејл</label>
+                     <div class="col-sm-9">
+                         <input type="text" name="mailFriend" class="form-control" id="email1" placeholder="Мејл адреса">
+                     </div>
+                 </div>
+                 <div class="form-group row">
+                     <label for="cono1" class="col-sm-3 text-left control-label col-form-label">Телефон</label>
+                     <div class="col-sm-9">
+                         <input type="text" name="fixFriend" class="form-control" id="cono1" placeholder="Фиксни телефон">
+                     </div>
+                 </div>
+                 <div class="form-group row">
+                    <label for="cono1" class="col-sm-3 text-left control-label col-form-label">Телефон</label>
+                    <div class="col-sm-9">
+                        <input type="text" name="mobilFriend" class="form-control" id="cono1" placeholder="Мобилни телефон">
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label for="cono1" class="col-sm-3 text-left control-label col-form-label">Датум рођења</label>
+                    <div class="col-sm-9">
+                        <input type="text" name="fondFriend" class="form-control" id="cono1" placeholder="Датум рођења ">
+                    </div>
+                </div>
+                
+                 <div class="form-group row">
+                     <label for="fname" class="col-sm-3 text-left control-label col-form-label">БЛК</label>
+                     <div class="col-sm-9">
+                         <input type="text" name="personFriend" class="form-control" id="fname" placeholder="Број личне карте">
+                     </div>
+                 </div>
+                 <div class="form-group row">
+                     <label for="lname" class="col-sm-3 text-left control-label col-form-label">ЈМБГ</label>
+                     <div class="col-sm-9">
+                         <input type="text" name="numberFriend" class="form-control" id="lname" placeholder="Матични број">
+                     </div>
+                 </div>
+                 <div class="form-group row">
+                     <label for="lname" class="col-sm-3 text-left control-label col-form-label">Занимање</label>
+                     <div class="col-sm-9">
+                         <input type="text" name="jobFriend" class="form-control" id="lname" placeholder="Област рада">
+                     </div>
+                 </div>
+                
+                 <div class="form-group row">
+                     <label  class="col-sm-3 text-left control-label col-form-label" for="">Напомена</label>
+                     <textarea style="margin-left:2% ;" name="noteFriend" id="" cols="90" rows="3"></textarea>
+                     </div>
+               </div>
+               
+           <button type="submit" style="background-color:rgb(66, 2, 2);" class="btn btn-primary form-control">Сачувај</button>
+
+               </form>
+        <!--Kreiranje svetinja  ============================================================== -->
+        <form class="shrine" method="POST" action="/admin/create/saveShrine">
+
+            <div class="form-group" style="margin-top:2%;" >
+              
+                 <select name="sectionShrine" class="form-control" >
+                     <option style="color:red; font-weight: bold;">СВЕТИЊЕ :</option>
+                     <option value="Цркве">Цркве</option>
+                     <option value="Музичка">Манастири</option>
+                     <option value="Епархије">Епархије</option>
+                    
+                 </select>
+             </div>
+             <div class="card-body">
+            
+                 <div class="form-group row">
+                     <label for="fname" class="col-sm-3 text-left control-label col-form-label">Светиња</label>
+                     <div class="col-sm-9">
+                         <input type="text" name="nameShrine" class="form-control" id="fname" placeholder="Име светиње">
+                     </div>
+                 </div>
+         
+                 <div class="form-group row">
+                     <label for="lname" class="col-sm-3 text-left control-label col-form-label">Адреса</label>
+                     <div class="col-sm-9">
+                         <input type="text" name="addressShrine" class="form-control" id="lname" placeholder="Локација">
+                     </div>
+                 </div>
+                 <div class="form-group row">
+                     <label for="email1" class="col-sm-3 text-left control-label col-form-label">Мејл</label>
+                     <div class="col-sm-9">
+                         <input type="text" name="mailShrine" class="form-control" id="email1" placeholder="Мејл адреса">
+                     </div>
+                 </div>
+                 <div class="form-group row">
+                     <label for="cono1" class="col-sm-3 text-left control-label col-form-label">Телефон</label>
+                     <div class="col-sm-9">
+                         <input type="text" name="fixShrine" class="form-control" id="cono1" placeholder="Фиксни телефон">
+                     </div>
+                 </div>
+                 <div class="form-group row">
+                    <label for="cono1" class="col-sm-3 text-left control-label col-form-label">Телефон</label>
+                    <div class="col-sm-9">
+                        <input type="text" name="mobilShrine" class="form-control" id="cono1" placeholder="Мобилни телефон">
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label for="cono1" class="col-sm-3 text-left control-label col-form-label">Основано</label>
+                    <div class="col-sm-9">
+                        <input type="text" name="fondShrine" class="form-control" id="cono1" placeholder="Датум оснивања">
+                    </div>
+                </div>
+                
+                 <div class="form-group row">
+                     <label for="fname" class="col-sm-3 text-left control-label col-form-label">БЛК</label>
+                     <div class="col-sm-9">
+                         <input type="text" name="personShrine" class="form-control" id="fname" placeholder="Број личне карте">
+                     </div>
+                 </div>
+                 <div class="form-group row">
+                     <label for="lname" class="col-sm-3 text-left control-label col-form-label">ЈМБГ</label>
+                     <div class="col-sm-9">
+                         <input type="text" name="numberShrine" class="form-control" id="lname" placeholder="Матични број">
+                     </div>
+                 </div>
+   
+                
+                 <div class="form-group row">
+                     <label  class="col-sm-3 text-left control-label col-form-label" for="">Напомена</label>
+                     <textarea style="margin-left:2% ;" name="noteShrine" id="" cols="90" rows="3"></textarea>
+                     </div>
+               </div>
+               
+           <button type="submit" style="background-color:rgb(66, 2, 2);" class="btn btn-primary form-control">Сачувај</button>
+
+               </form>
+                <!--Kreiranje ostalo  ============================================================== -->
+        <form class="other" method="POST" action="/admin/create/saveOther">
+
+            <div class="form-group" style="margin-top: 2%;" >
+              
+                 <select name="sectionOther" class="form-control" >
+                     <option style="color:red; font-weight: bold;">ПРЕДУЗЕЋА И ДРУГА ЛИЦА :</option>
+                     <option value="Компаније">Компаније</option>
+                     <option value="Добротвори">Добротвори </option>
+                     <option value="Сарадници">Сарадници</option>
+                     <option value="Приложници">Приложници</option>
+                     <option value="Корисници услуга">Корисници услуга</option>
+                     <option value="Медији">Медији</option>
+                     <option value="Камермани">Камермани</option>
+                     <option value="Фотографи">Фотографи</option>
+                     <option value="Клубови">Клубови</option>
+                 </select>
+             </div>
+             <div class="card-body">
+            
+                 <div class="form-group row">
+                     <label for="fname" class="col-sm-3 text-left control-label col-form-label">Име и презиме /  Фирма</label>
+                     <div class="col-sm-9">
+                         <input type="text" name="nameOther" class="form-control" id="fname" placeholder="Назив">
+                     </div>
+                 </div>
+         
+                 <div class="form-group row">
+                     <label for="lname" class="col-sm-3 text-left control-label col-form-label">Адреса</label>
+                     <div class="col-sm-9">
+                         <input type="text" name="addressOther" class="form-control" id="lname" placeholder="Адреса становања">
+                     </div>
+                 </div>
+                 <div class="form-group row">
+                     <label for="email1" class="col-sm-3 text-left control-label col-form-label">Мејл</label>
+                     <div class="col-sm-9">
+                         <input type="text" name="mailOther" class="form-control" id="email1" placeholder="Мејл адреса">
+                     </div>
+                 </div>
+                 <div class="form-group row">
+                     <label for="cono1" class="col-sm-3 text-left control-label col-form-label">Телефон</label>
+                     <div class="col-sm-9">
+                         <input type="text" name="fixOther" class="form-control" id="cono1" placeholder="Фиксни телефон">
+                     </div>
+                 </div>
+                 <div class="form-group row">
+                    <label for="cono1" class="col-sm-3 text-left control-label col-form-label">Телефон</label>
+                    <div class="col-sm-9">
+                        <input type="text" name="mobilOther" class="form-control" id="cono1" placeholder="Мобилни телефон">
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label for="cono1" class="col-sm-3 text-left control-label col-form-label">Основано/ Датум рођења</label>
+                    <div class="col-sm-9">
+                        <input type="text" name="fondOther" class="form-control" id="cono1" placeholder="Датум">
+                    </div>
+                </div>
+                
+                 <div class="form-group row">
+                     <label for="fname" class="col-sm-3 text-left control-label col-form-label">БЛК</label>
+                     <div class="col-sm-9">
+                         <input type="text" name="personOther" class="form-control" id="fname" placeholder="Број личне карте">
+                     </div>
+                 </div>
+                 <div class="form-group row">
+                     <label for="lname" class="col-sm-3 text-left control-label col-form-label">ЈМБГ</label>
+                     <div class="col-sm-9">
+                         <input type="text" name="numberOther" class="form-control" id="lname" placeholder="Матични број">
+                     </div>
+                 </div>
+                 <div class="form-group row">
+                     <label for="lname" class="col-sm-3 text-left control-label col-form-label">Занимање</label>
+                     <div class="col-sm-9">
+                         <input type="text" name="jobOther" class="form-control" id="lname" placeholder="Област рада">
+                     </div>
+                 </div>
+                 <div class="form-group row">
+                    <label for="lname" class="col-sm-3 text-left control-label col-form-label">Име оца</label>
+                    <div class="col-sm-9" >
+                        <input type="text" name="fatherOther" class="form-control" id="lname" 
+                        placeholder="Само корисници услуга">
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label for="lname" class="col-sm-3 text-left control-label col-form-label">Име мајке</label>
+                    <div class="col-sm-9">
+                        <input type="text" name="matherOther" class="form-control" id="lname" placeholder="Само корисници услуга">
+                    </div>
+                </div>
+                
+                 <div class="form-group row">
+                     <label  class="col-sm-3 text-left control-label col-form-label" for="">Напомена</label>
+                     <textarea style="margin-left:2% ;" name="noteOther" id="" cols="90" rows="3"></textarea>
+                     </div>
+               </div>
+               
+           <button type="submit" style="background-color:rgb(66, 2, 2) ;" class="btn btn-primary form-control">Сачувај</button>
+
+               </form>
+            </div></div>
+                    </div>
+                 
+               
+             </div>
+        </div>
+        <footer class="footer text-center">
+            Сва права задржана<a href="https://wrappixel.com">
+<b  style=" font-family: 'Maven Pro', sans-serif;" class="text-danger">ТодаБогдаВеб</b></a>.
+          </footer>
+           
+        </div>
+    
+    </div>
+    
+    <script src="../../assets/libs/jquery/dist/jquery.min.js"></script>
+    <!-- Bootstrap tether Core JavaScript -->
+    <script src="../../assets/libs/popper.js/dist/umd/popper.min.js"></script>
+    <script src="../../assets/libs/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="../../assets/libs/perfect-scrollbar/dist/perfect-scrollbar.jquery.min.js"></script>
+    <script src="../../assets/extra-libs/sparkline/sparkline.js"></script>
+    <!--Wave Effects -->
+    <script src="../../dist/js/waves.js"></script>
+    <!--Menu sidebar -->
+    <script src="../../dist/js/sidebarmenu.js"></script>
+    <!--Custom JavaScript -->
+    <script src="../../dist/js/custom.min.js"></script>
+    <!--This page JavaScript -->
+    <!-- <script src="../../dist/js/pages/dashboards/dashboard1.js"></script> -->
+    <!-- Charts js Files -->
+    <script src="../../assets/libs/flot/excanvas.js"></script>
+    <script src="../../assets/libs/flot/jquery.flot.js"></script>
+    <script src="../../assets/libs/flot/jquery.flot.pie.js"></script>
+    <script src="../../assets/libs/flot/jquery.flot.time.js"></script>
+    <script src="../../assets/libs/flot/jquery.flot.stack.js"></script>
+    <script src="../../assets/libs/flot/jquery.flot.crosshair.js"></script>
+    <script src="../../assets/libs/flot.tooltip/js/jquery.flot.tooltip.min.js"></script>
+    <script src="../../dist/js/pages/chart/chart-page-init.js"></script>
+
+</body>
+
+</html>
