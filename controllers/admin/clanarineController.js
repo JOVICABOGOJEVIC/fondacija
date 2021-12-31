@@ -5,7 +5,6 @@ const clanarineController = (req,res) =>{
     let user = req.session.user;
     db.users.find({},(err, users) =>{
     var members = users.filter((user) => user.role ==  "clan")
-     console.log(members);
         res.render("admin/adminClanarine",{
             
             name: user.first_name,
