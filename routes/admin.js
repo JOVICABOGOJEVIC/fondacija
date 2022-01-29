@@ -10,6 +10,7 @@ router.get("/",require("../controllers/admin/adminController"));
 router.get("/create",(req,res) =>{
     res.render("admin/adminCreateForm");
 })
+
 router.get("/create/subject",(req,res) =>{
     res.render("admin/createSubject");
 })

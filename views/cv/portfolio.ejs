@@ -1,0 +1,41 @@
+<%- include ('../partials/top') %> 
+<%- include ('../partials/navbar') %> 
+
+   <div class="box">
+    <h2 id="demo" style="font-size: 1.3em; color:rgb(202, 193, 193); "></h2>
+        <h1 id="demo1" style="font-size:5em; color:white; font-family: 'Cinzel', serif;"></h1>
+        <h4 id="demo2" style="font-size:1.7em; color:rgb(245, 239, 239); text-decoration: underline;"></h4>
+</div>
+
+
+<script>
+    var i = 0;
+    var j = 0;
+    var txt = `Helo, my name is Jovica`;
+    var text = `I make websites and applications `;
+    var speed = 50;
+    function typeWriter() {
+      if (i != txt.length) {
+        document.getElementById("demo").innerHTML += txt.charAt(i);
+        i++;
+        setTimeout(typeWriter, 1);
+      }else{
+          typing()
+      }
+    }
+    function typing(){
+        if (j != text.length) {
+        document.getElementById("demo1").innerHTML += text.charAt(j);
+        j++;
+        setTimeout(typeWriter, 20);
+      }else{
+          typeEnd()
+      }
+    }
+    function typeEnd(){
+        document.getElementById("demo2").innerHTML = " I’m a Web Developer."
+    }
+    </script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/2.0.2/anime.min.js"></script>
+</body>
+</html>
