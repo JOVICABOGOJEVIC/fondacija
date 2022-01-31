@@ -38,7 +38,6 @@ const koordinatorController = (req,res) =>{
     medicsMember:medicsMember,
     languagesMember:languagesMember
    });
-   console.log(languages);
 
  })
 }

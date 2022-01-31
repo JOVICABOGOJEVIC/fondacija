@@ -10,6 +10,7 @@ router.use("/logout", require("./logout"));
 router.use("/admin",require("./admin"));
 router.use("/koordinator",require("./koordinator"));
 router.use("/cv",require("./cv"));
+router.use("/table",require("./table"));
 
 
 

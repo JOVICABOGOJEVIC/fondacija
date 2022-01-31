@@ -1,6 +1,8 @@
 const express = require('express');
 const router = express.Router();
 
-router.get("/", require("../controllers/koordinator/koordinatorController"));
+router.get('/', (req,res) =>{
+    res.render("table/work")
+});
 
 module.exports = router;

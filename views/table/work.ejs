@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>Table</title>
+    <style>
+        .box{
+            width:600px;
+            height:440px;
+            border:1px solid black;
+            margin:50px auto;
+        }
+        .newDiv{
+            width:100px;
+            height:40px;
+            line-height: 40px;
+            float:left;
+            box-sizing: border-box;
+            border:1px solid black;
+            text-align:center;
+        }
+        .btn{
+        border:1px solid brown;
+        background-color: maroon;
+        color:white;
+        padding: 1%;
+        text-decoration: none;
+        border-radius:5px;
+        }
+    </style>
+</head>
+<body>
+<div class="box">
+
+</div>
+<a href='http://46.101.118.4/table' class="btn btn-danger"> RESET</a>
+
+<script>
+    var box = document.querySelector('.box');
+    createTable();
+   var boxes = document.querySelectorAll('.newDiv');
+console.log(box);
+for (var i = 0; i<boxes.length; i++){
+    boxes[i].addEventListener('click', changeColor);
+    boxes[0].innerText = 'Ponedeljak';
+    boxes[0].style.background = 'white';
+    boxes[1].innerText = 'Utorak';
+    boxes[1].style.background = 'white';
+    boxes[2].innerText = 'Sreda';
+    boxes[2].style.background = 'white';
+    boxes[3].innerText = 'Cetvrtak';
+    boxes[3].style.background = 'white';
+    boxes[4].innerText = 'Petak';
+    boxes[4].style.background = 'white';
+    boxes[5].innerText = 'Subota';
+    boxes[5].style.background = 'white';
+    boxes[6].innerText = '8h-9h';
+    boxes[12].innerText = '9h-10h';
+    boxes[18].innerText = '10h-11h';
+    boxes[24].innerText = '11h-12h';
+    boxes[30].innerText = '12h-13h';
+    boxes[36].innerText = '13h-14h';
+    boxes[42].innerText = '14h-15h';
+    boxes[48].innerText = '15h-16h';
+    boxes[54].innerText = '16h-17h';
+    boxes[60].innerText = '17h-18h';
+    boxes[9].innerText = '8h-9h';
+    boxes[15].innerText = '9h-10h';
+    boxes[21].innerText = '10h-11h';
+    boxes[27].innerText = '11h-12h';
+    boxes[33].innerText = '12h-13h';
+    boxes[39].innerText = '13h-14h';
+    boxes[45].innerText = '14h-15h';
+    boxes[51].innerText = '15h-16h';
+    boxes[57].innerText = '16h-17h';
+    boxes[63].innerText = '17h-18h';
+}
+
+   function createTable(){
+       var text = '';
+       for(var i=0;i<66;i++){
+text += '<div class="newDiv"></div>';
+   }
+   box.innerHTML = text;
+   }
+   
+   function changeColor(){       
+if(this.value == true){
+    this.value = false;
+    this.style.background = 'green';
+}else{
+    this.value = true;
+    this.style.background = 'red';
+}
+console.log(this.value);
+}
+</script>
+</body>
+</html>
