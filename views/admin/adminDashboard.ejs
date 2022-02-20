@@ -102,8 +102,11 @@
                         <!-- ============================================================== -->
                         <li class="nav-item search-box"> <a class="nav-link waves-effect waves-dark" href="javascript:void(0)"><i class="ti-search"></i></a>
                             <form class="app-search position-absolute">
-                                <input type="text" class="form-control" placeholder="Search &amp; enter"> <a class="srh-btn"><i class="ti-close"></i></a>
+
+                                <input type="number" class="form-control"  placeholder="Тражени појам">
+                                <button class="btn btn-danger form-control" id="myInput" type="submit">Trazi</button> <a class="srh-btn"><i class="ti-close"></i></a>
                             </form>
+
                         </li>
                     </ul>
                     <!-- ============================================================== -->
@@ -670,6 +673,12 @@
     <script src="../../assets/libs/flot.tooltip/js/jquery.flot.tooltip.min.js"></script>
     <script src="../../dist/js/pages/chart/chart-page-init.js"></script>
 <script>
+    var input = document.getElementById("myInput");
+input.addEventListener('click', function() {
+
+
+});
+
     $(".delete-cord").on('click', function(){
         let id = $(this).attr('data-id');
         let potvrda = confirm("Да ли сте сигурни да желите да избришете координатора?");
